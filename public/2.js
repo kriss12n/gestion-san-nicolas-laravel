@@ -11,6 +11,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! file-saver */ "./node_modules/file-saver/dist/FileSaver.min.js");
+/* harmony import */ var file_saver__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(file_saver__WEBPACK_IMPORTED_MODULE_1__);
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -47,18 +49,52 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     downloadFile: function downloadFile() {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var data, s, i, FileSaver, blob;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return axios.get("/download-jsonfile");
+                data = [{
+                  rdb: "123",
+                  rdbv: "6",
+                  rut: "19823029-4",
+                  verificador: "4"
+                }, {
+                  rdb: "123",
+                  rdbv: "6",
+                  rut: "19475847-k",
+                  verificador: "k"
+                }, {
+                  rdb: "123",
+                  rdbv: "6",
+                  rut: "32546575-6",
+                  verificador: "6"
+                }, {
+                  rdb: "123",
+                  rdbv: "6",
+                  rut: "27684759-0",
+                  verificador: "0"
+                }];
+                s = ""; // for (let i = 0; i < data.length; i++) {
+                //     s[i] = data[i].nombre+"	"+data[i].apellido+" "+data[i].rut+" "+data[i].verificador+"\r\n"
+                // }
 
-              case 2:
+                for (i = 0; i < data.length; i++) {
+                  s += "".concat(data[i].rdb, "     ").concat(data[i].rdbv, "     ").concat(data[i].rut, "      ").concat(data[i].verificador, "   \r\n");
+                }
+
+                FileSaver = __webpack_require__(/*! file-saver */ "./node_modules/file-saver/dist/FileSaver.min.js");
+                blob = new Blob([s], {
+                  type: "text/plain;charset=ut-f8"
+                });
+                FileSaver.saveAs(blob, "SIGE.txt");
+
+              case 6:
               case "end":
                 return _context.stop();
             }

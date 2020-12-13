@@ -20,17 +20,14 @@ Route::get('/', function () {
     return view('principal');
 });
 
-
-
-
-
-
-Route::get('Administracion/nivel',[CursoController::class,"nivel"]);
-Route::get('Administracion/curso',[CursoController::class,"index"]);
+Route::get('/Administracion/nivel',[CursoController::class,"nivel"]);
+Route::get('/Administracion/curso',[CursoController::class,"index"]);
 Route::post('/Administracion/student/{id}/edit',[CursoController::class,"edit"]);
 Route::post('/Administracion/studentcurso/{id}/edit',[CursoController::class,"editc"]);
 Route::post('/Administracion/studentnotas/{id}/edit',[CursoController::class,"editn"]);
 Route::post('/Administracion/studentnotast/{id}/edit',[CursoController::class,"editnt"]);
+
+Route::get('/file-download',[CursoController::class,"downloadFile"]);
 
 Route::get('Administracion/cursocategoria',[CursoController::class,'index']);
 Route::post('Administracion/cursocategoria/{id}/edit',[CursoController::class,'edit']);
