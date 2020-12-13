@@ -33,4 +33,4 @@ Route::post('/Administracion/studentnotas/{id}/edit',[CursoController::class,"ed
 Route::post('/Administracion/studentnotast/{id}/edit',[CursoController::class,"editnt"]);
 
 Route::get('Administracion/cursocategoria',[CursoController::class,'index']);
-Route::post('Administracion/cursocategoria/{id}/edit',[CursoController::class,'edit']);
+Route::post('Administracion/cursocategoria/{id}/edit',[CursoCategoriaController::class,'edit']);
