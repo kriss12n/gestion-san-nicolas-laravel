@@ -30,4 +30,4 @@ Route::post('/Administracion/studentnotast/{id}/edit',[CursoController::class,"e
 Route::get('/file-download',[CursoController::class,"downloadFile"]);
 
 Route::get('Administracion/cursocategoria',[CursoController::class,'index']);
-Route::post('Administracion/cursocategoria/{id}/edit',[CursoController::class,'edit']);
+Route::post('Administracion/cursocategoria/{id}/edit',[CursoCategoriaController::class,'edit']);
