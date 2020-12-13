@@ -207,28 +207,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -482,40 +460,6 @@ var render = function() {
                                             _vm._v(" "),
                                             _c("td", [_vm._v(_vm._s(c.email))]),
                                             _vm._v(" "),
-                                            c.phone1 == ""
-                                              ? _c("td", [
-                                                  _vm._v("No telefono")
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            c.phone1 != ""
-                                              ? _c("td", [
-                                                  _vm._v(_vm._s(c.phone1))
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            c.address == ""
-                                              ? _c("td", [
-                                                  _vm._v(
-                                                    "\n                              No notiene una direcion asociada\n                            "
-                                                  )
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            c.address != ""
-                                              ? _c("td", [
-                                                  _vm._v(_vm._s(c.address))
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
-                                            c.city == ""
-                                              ? _c("td", [
-                                                  _vm._v(
-                                                    "\n                              No notiene una ciudad asociada\n                            "
-                                                  )
-                                                ])
-                                              : _vm._e(),
-                                            _vm._v(" "),
                                             c.city != ""
                                               ? _c("td", [
                                                   _vm._v(_vm._s(c.city))
@@ -594,10 +538,6 @@ var render = function() {
                                             _vm._v(" "),
                                             _c("th", [_vm._v("Email")]),
                                             _vm._v(" "),
-                                            _c("th", [_vm._v("telefono")]),
-                                            _vm._v(" "),
-                                            _c("th", [_vm._v("Direcion")]),
-                                            _vm._v(" "),
                                             _c("th", [_vm._v("Ciudad")]),
                                             _vm._v(" "),
                                             _vm._l(_vm.studentnt, function(c) {
@@ -609,9 +549,12 @@ var render = function() {
                                                       name: "show",
                                                       rawName: "v-show",
                                                       value:
-                                                        _vm.studentn.length > 0,
+                                                        _vm.studentn.length >
+                                                          0 &&
+                                                        _vm.studentnt[0]
+                                                          .userid == c.userid,
                                                       expression:
-                                                        "studentn.length > 0"
+                                                        "studentn.length > 0 && studentnt[0].userid == c.userid"
                                                     }
                                                   ],
                                                   key: c.id
@@ -650,40 +593,6 @@ var render = function() {
                                               _c("td", [
                                                 _vm._v(_vm._s(c.email))
                                               ]),
-                                              _vm._v(" "),
-                                              c.phone1 == ""
-                                                ? _c("td", [
-                                                    _vm._v("No telefono")
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              c.phone1 != ""
-                                                ? _c("td", [
-                                                    _vm._v(_vm._s(c.phone1))
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              c.address == ""
-                                                ? _c("td", [
-                                                    _vm._v(
-                                                      "\n                              No notiene una direcion asociada\n                            "
-                                                    )
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              c.address != ""
-                                                ? _c("td", [
-                                                    _vm._v(_vm._s(c.address))
-                                                  ])
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              c.city == ""
-                                                ? _c("td", [
-                                                    _vm._v(
-                                                      "\n                              No notiene una ciudad asociada\n                            "
-                                                    )
-                                                  ])
-                                                : _vm._e(),
                                               _vm._v(" "),
                                               c.city != ""
                                                 ? _c("td", [
@@ -794,10 +703,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Nombre Corto")]),
         _vm._v(" "),
         _c("th", [_vm._v("Email")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("telefono")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Direcion")]),
         _vm._v(" "),
         _c("th", [_vm._v("Ciudad")]),
         _vm._v(" "),

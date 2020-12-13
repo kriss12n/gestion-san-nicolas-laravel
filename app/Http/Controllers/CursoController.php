@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use File;
+
 use App\Models\Item;
 use App\Models\Curso;
 use App\Models\Grade;
 use App\Models\Grupo;
 use App\Models\CursoMember;
 use App\Models\GroupMember;
-use App\Models\User;
-use File;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 
 class CursoController extends Controller
 {
@@ -47,10 +46,7 @@ class CursoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+
 
     /**
      * Display the specified resource.
@@ -71,25 +67,25 @@ class CursoController extends Controller
      */
     public function edit($id)
     {
-        $student = GroupMember::join('mdluu_user', 'mdluu_user.id', '=', 'mdluu_groups_members.userid')->where('groupid',$id)->get()->toArray();
+        $student = GroupMember::join('mdluu_user', 'mdluu_user.id', '=', 'mdluu_groups_members.userid')->where('groupid',$id)->get();
         return $student;
     }
     public function editc($id)
     {
-        $student = CursoMember::join('mdluu_user', 'mdluu_user.id', '=', 'mdluu_course_completions.userid')->where('course',$id)->get()->toArray();
+        $student = CursoMember::join('mdluu_user', 'mdluu_user.id', '=', 'mdluu_course_completions.userid')->where('course',$id)->get();
         return $student;
     }
     public function editn($id)
     {
 
-        $studen = Item::select("mdluu_grade_grades.finalgrade","mdluu_grade_grades.rawgrade","mdluu_grade_grades.userid","mdluu_grade_grades.itemid")->join('mdluu_grade_grades', 'mdluu_grade_grades.itemid', '=', 'mdluu_grade_items.id')->where('courseid',$id)->get()->toArray();
+        $studen = Item::select("mdluu_grade_grades.finalgrade","mdluu_grade_grades.rawgrade","mdluu_grade_grades.userid","mdluu_grade_grades.itemid")->join('mdluu_grade_grades', 'mdluu_grade_grades.itemid', '=', 'mdluu_grade_items.id')->where('courseid',$id)->get();
         return  $studen;
     }
 
     public function editnt($id)
     {
 
-        $studen = Grade::select("mdluu_grade_items.itemname","mdluu_grade_grades.userid")->join('mdluu_grade_items', 'mdluu_grade_items.id', '=', 'mdluu_grade_grades.itemid')->get()->toArray();
+        $studen = Grade::select("mdluu_grade_items.itemname","mdluu_grade_grades.userid")->join('mdluu_grade_items', 'mdluu_grade_items.id', '=', 'mdluu_grade_grades.itemid')->get();
         return $studen;
     }
 
@@ -100,10 +96,6 @@ class CursoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -115,6 +107,7 @@ class CursoController extends Controller
     {
         //
     }
+
 
 
     public function downloadFile(){

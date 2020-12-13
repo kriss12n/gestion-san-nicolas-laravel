@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Curso;
-use App\CursoCategoria;
+
 use Illuminate\Http\Request;
+use App\Models\CursoCategoria;
+use App\Models\Curso;
 
 class CursoCategoriaController extends Controller
 {
@@ -59,7 +60,7 @@ class CursoCategoriaController extends Controller
      */
     public function edit($id)
     {
-        $todosC = Curso::where('category',$id)->get()->toArray();
+        $todosC = Curso::where('category',$id)->get();
         return $todosC;
     }
 

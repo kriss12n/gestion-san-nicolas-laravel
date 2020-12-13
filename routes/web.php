@@ -21,13 +21,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('download-jsonfile', array('as'=> 'file.download', 'uses' => 'FileController@downloadJSONFile'));
 
 
-Route::get('/user', [UserController::class, 'index']);
-Route::resource('Administracion/usuarios','AdministracionUserController');
-Route::get('Administracion',[ 'as'=>'administracion', 'uses'=>'PaginaController@administracion'])->middleware('user');
-Route::get('Administracion/nivel','CursoController@nivel');
+
+
+Route::get('Administracion/nivel',[CursoController::class,"nivel"]);
 Route::get('Administracion/curso',[CursoController::class,"index"]);
 Route::post('/Administracion/student/{id}/edit',[CursoController::class,"edit"]);
 Route::post('/Administracion/studentcurso/{id}/edit',[CursoController::class,"editc"]);

@@ -151,7 +151,7 @@ var render = function() {
                 "tbody",
                 _vm._l(_vm.cursos, function(curso) {
                   return _c("tr", { key: curso.id }, [
-                    _c("td", [_vm._v(_vm._s(curso.name))]),
+                    _c("td", [_vm._v(_vm._s(curso.fullname))]),
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(curso.description))]),
                     _vm._v(" "),

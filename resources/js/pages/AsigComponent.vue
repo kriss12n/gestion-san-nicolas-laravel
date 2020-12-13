@@ -85,8 +85,6 @@
                               <th>Nombre</th>
                               <th>Nombre Corto</th>
                               <th>Email</th>
-                              <th>telefono</th>
-                              <th>Direcion</th>
                               <th>Ciudad</th>
                               <th>Nota</th>
                             </tr>
@@ -97,15 +95,6 @@
                               <td>{{ c.firstname }}</td>
                               <td>{{ c.lastname }}</td>
                               <td>{{ c.email }}</td>
-                              <td v-if="c.phone1 == ''">No telefono</td>
-                              <td v-if="c.phone1 != ''">{{ c.phone1 }}</td>
-                              <td v-if="c.address == ''">
-                                No notiene una direcion asociada
-                              </td>
-                              <td v-if="c.address != ''">{{ c.address }}</td>
-                              <td v-if="c.city == ''">
-                                No notiene una ciudad asociada
-                              </td>
                               <td v-if="c.city != ''">{{ c.city }}</td>
                             </tr>
                           </tbody>
@@ -158,11 +147,9 @@
                               <th>Nombre</th>
                               <th>Nombre Corto</th>
                               <th>Email</th>
-                              <th>telefono</th>
-                              <th>Direcion</th>
                               <th>Ciudad</th>
                               <th
-                                v-show="studentn.length > 0"
+                                v-show="studentn.length > 0 && studentnt[0].userid == c.userid"
                                 v-for="c in studentnt"
                                 :key="c.id"
                               >
@@ -176,15 +163,6 @@
                               <td>{{ c.firstname }}</td>
                               <td>{{ c.lastname }}</td>
                               <td>{{ c.email }}</td>
-                              <td v-if="c.phone1 == ''">No telefono</td>
-                              <td v-if="c.phone1 != ''">{{ c.phone1 }}</td>
-                              <td v-if="c.address == ''">
-                                No notiene una direcion asociada
-                              </td>
-                              <td v-if="c.address != ''">{{ c.address }}</td>
-                              <td v-if="c.city == ''">
-                                No notiene una ciudad asociada
-                              </td>
                               <td v-if="c.city != ''">{{ c.city }}</td>
                               <td
                                 v-show="c.id == n.userid"
