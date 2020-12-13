@@ -16,7 +16,7 @@
 
               <tbody>
                 <tr v-for="curso in cursos" :key="curso.id">
-                  <td>{{ curso.fullname }}</td>
+                  <td>{{ curso.name }}</td>
                   <td>{{ curso.description }}</td>
                   <td v-if="curso.visible ==1" >si</td>
                   <td v-if="curso.visible ==0" >no</td>

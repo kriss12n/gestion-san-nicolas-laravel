@@ -10,6 +10,7 @@ use App\Models\Grade;
 use App\Models\Grupo;
 use App\Models\CursoMember;
 use App\Models\GroupMember;
+use App\Models\CursoCategoria;
 
 
 class CursoController extends Controller
@@ -21,7 +22,7 @@ class CursoController extends Controller
      */
     public function index()
     {
-        $todosCC = Curso::all();
+        $todosCC = CursoCategoria::all();
         return $todosCC;
     }
     public function nivel()
