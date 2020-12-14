@@ -33,5 +33,5 @@ Route::get('/Usuarios/alumnos',[UserController::class,"index"]);
 Route::get('/Usuarios',[UserController::class,"getAlumnosByCategory"]);
 
 
-Route::get('Administracion/cursocategoria',[CursoController::class,'index']);
+Route::get('Administracion/cursocategoria',[CursoCategoriaController::class,'index']);
 Route::post('Administracion/cursocategoria/{id}/edit',[CursoCategoriaController::class,'edit']);
