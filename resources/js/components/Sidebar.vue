@@ -40,10 +40,11 @@
                                     <span key="t-authentication">Certicados</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="auth-login.html" key="t-login">Login</a></li>
-                                    <li><a href="auth-register.html" key="t-register">Register</a></li>
-                                    <li><a href="auth-recoverpw.html" key="t-recover-password">Recover Password</a></li>
-                                    <li><a href="auth-lock-screen.html" key="t-lock-screen">Lock Screen</a></li>
+                                        <li>
+                                            <router-link to="/alumno-regular-certificado" class="nav-link waves-effect">
+                                                <span key="t-starter-page">Alumno regular</span>
+                                             </router-link>
+                                        </li>
                                 </ul>
                             </li>
                                  <li class="menu-title" key="t-pages">Exportaciones SIGE</li>

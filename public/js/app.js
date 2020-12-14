@@ -2155,6 +2155,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -38947,46 +38948,24 @@ var render = function() {
                   attrs: { "aria-expanded": "false" }
                 },
                 [
-                  _c("li", [
-                    _c(
-                      "a",
-                      { key: "t-login", attrs: { href: "auth-login.html" } },
-                      [_vm._v("Login")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c(
-                      "a",
-                      {
-                        key: "t-register",
-                        attrs: { href: "auth-register.html" }
-                      },
-                      [_vm._v("Register")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c(
-                      "a",
-                      {
-                        key: "t-recover-password",
-                        attrs: { href: "auth-recoverpw.html" }
-                      },
-                      [_vm._v("Recover Password")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c(
-                      "a",
-                      {
-                        key: "t-lock-screen",
-                        attrs: { href: "auth-lock-screen.html" }
-                      },
-                      [_vm._v("Lock Screen")]
-                    )
-                  ])
+                  _c(
+                    "li",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "nav-link waves-effect",
+                          attrs: { to: "/alumno-regular-certificado" }
+                        },
+                        [
+                          _c("span", { key: "t-starter-page" }, [
+                            _vm._v("Alumno regular")
+                          ])
+                        ]
+                      )
+                    ],
+                    1
+                  )
                 ]
               )
             ]),
@@ -57364,19 +57343,25 @@ var routes = [{
   path: "/cursos",
   name: "cursos",
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./pages/CursoComponent.vue */ "./resources/js/pages/CursoComponent.vue"));
+    return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ./pages/CursoComponent.vue */ "./resources/js/pages/CursoComponent.vue"));
   }
 }, {
   path: "/asig",
   name: "asig",
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./pages/AsigComponent.vue */ "./resources/js/pages/AsigComponent.vue"));
+    return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./pages/AsigComponent.vue */ "./resources/js/pages/AsigComponent.vue"));
   }
 }, {
   path: "/notasSIGE",
   name: "notasSIGE",
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(3), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./pages/NotaSigeComponent.vue */ "./resources/js/pages/NotaSigeComponent.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(4), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ./pages/NotaSigeComponent.vue */ "./resources/js/pages/NotaSigeComponent.vue"));
+  }
+}, {
+  path: "/alumno-regular-certificado",
+  name: "alumno_regular",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./pages/AlumnorRegularComponent.vue */ "./resources/js/pages/AlumnorRegularComponent.vue"));
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -57405,12 +57390,12 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\proyectos\bluescreen\gestion-san-nicolas-laravel\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! D:\proyectos\bluescreen\gestion-san-nicolas-laravel\resources\assets\libs\metismenu\metisMenu.min.js */"./resources/assets/libs/metismenu/metisMenu.min.js");
-__webpack_require__(/*! D:\proyectos\bluescreen\gestion-san-nicolas-laravel\resources\assets\libs\simplebar\simplebar.min.js */"./resources/assets/libs/simplebar/simplebar.min.js");
-__webpack_require__(/*! D:\proyectos\bluescreen\gestion-san-nicolas-laravel\resources\assets\libs\node-waves\waves.min.js */"./resources/assets/libs/node-waves/waves.min.js");
-__webpack_require__(/*! D:\proyectos\bluescreen\gestion-san-nicolas-laravel\resources\assets\js\app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! D:\proyectos\bluescreen\gestion-san-nicolas-laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Volumes/HDD/proyectos/test/gestion-san-nicolas-laravel/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Volumes/HDD/proyectos/test/gestion-san-nicolas-laravel/resources/assets/libs/metismenu/metisMenu.min.js */"./resources/assets/libs/metismenu/metisMenu.min.js");
+__webpack_require__(/*! /Volumes/HDD/proyectos/test/gestion-san-nicolas-laravel/resources/assets/libs/simplebar/simplebar.min.js */"./resources/assets/libs/simplebar/simplebar.min.js");
+__webpack_require__(/*! /Volumes/HDD/proyectos/test/gestion-san-nicolas-laravel/resources/assets/libs/node-waves/waves.min.js */"./resources/assets/libs/node-waves/waves.min.js");
+__webpack_require__(/*! /Volumes/HDD/proyectos/test/gestion-san-nicolas-laravel/resources/assets/js/app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! /Volumes/HDD/proyectos/test/gestion-san-nicolas-laravel/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
