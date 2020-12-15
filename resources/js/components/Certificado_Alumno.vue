@@ -17,5 +17,10 @@
 <script>
 export default {
 
+methods: {
+    print () {
+			this.$htmlToPaper('printMe');
+    },
+}
 }
 </script>
