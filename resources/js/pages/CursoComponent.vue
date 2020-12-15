@@ -96,7 +96,7 @@
                                         <td>{{ c.lastname }}</td>
                                         <td>{{ c.username }}</td>
                                         <td>{{ c.email }}</td>
-                                        <td> <button class="btn btn-danger">Obtener certificado de alumno regular</button> </td>
+                                        <td> <button @click="cargartodo(c)" data-target="#informe" data-toggle="modal" class="btn btn-danger">Obtener certificado de alumno regular</button> </td>
                                     </tr>
                             </tbody>
 
@@ -117,7 +117,6 @@
         </div>
       </div>
     </div>
-    <button @click="print" data-target="#informe" data-toggle="modal" class="btn btn-success mt-2">Generar reporte de notas</button>
     <div>
 
 				<div class="modal fade"  data-backdrop="static" id="informe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -166,12 +165,12 @@
                                         </div>
                                    <div class="row justify-content-center mt-3">
                                           <div class="col-1"></div>
-                                          <div class="col-10">   <h3><strong>ALONSO MATÍAS GUTIERREZ HENRIQUEZ</strong></h3></div>
+                                          <div class="col-10">   <h3><strong>{{todo.firstname}} {{todo.lastname}}</strong></h3></div>
                                           <div class="col-1"></div>
                                         </div>
                                    <div class="row justify-content-center mt-3">
                                           <div class="col-1"></div>
-                                          <div class="col-10">   <h3>RUT: <strong>22.135.455-9 </strong>, es alumno(a) regular del <strong>8B</strong> de <strong>Enseñanza Básica</strong>
+                                          <div class="col-10">   <h3>RUT: <strong>{{todo.username}} </strong>, es alumno(a) regular del <strong>{{todo.name}}</strong> de <strong>Enseñanza Media</strong>
                                             ,inscrito(a) en el Registro N° <strong>826</strong> de nuestro establecimiento.</h3></div>
                                           <div class="col-1"></div>
                                         </div>
@@ -229,12 +228,17 @@ export default {
       cursosc: [],
       alumnos:[],
       idcurso:"",
+      todo:'',
       name:''
     };
   },
   methods: {
       	print () {
 			this.$htmlToPaper('printMe');
+    },
+
+    cargartodo(c){
+    this.todo = c;
     },
 
     getCursos() {
