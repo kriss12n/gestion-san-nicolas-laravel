@@ -32,5 +32,5 @@ Route::get('/file-download',[CursoController::class,"downloadFile"]);
 Route::post('/Usuarios/alumnos',[UserController::class,"getAlumnosByCategory"]);
 
 
-Route::get('Administracion/cursocategoria',[CursoController::class,'index']);
+Route::get('Administracion/cursocategoria',[CursoCategoriaController::class,'index']);
 Route::post('Administracion/cursocategoria/{id}/edit',[CursoCategoriaController::class,'edit']);

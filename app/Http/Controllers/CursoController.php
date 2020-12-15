@@ -22,7 +22,7 @@ class CursoController extends Controller
      */
     public function index()
     {
-        $todosCC = CursoCategoria::all();
+        $todosCC = Curso::all();
         return $todosCC;
     }
     public function nivel()
