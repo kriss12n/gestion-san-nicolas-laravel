@@ -190,18 +190,64 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       cursos: [],
       cursosc: [],
+      alumnos: [],
       idcurso: "",
+      todo: '',
       name: ''
     };
   },
   methods: {
     print: function print() {
       this.$htmlToPaper('printMe');
+    },
+    cargartodo: function cargartodo(c) {
+      this.todo = c;
     },
     getCursos: function getCursos() {
       var _this = this;
@@ -218,6 +264,25 @@ __webpack_require__.r(__webpack_exports__);
       this.name = curso.name;
       axios.post("Administracion/cursocategoria/" + this.idcurso + "/edit").then(function (res) {
         _this2.cursosc = res.data;
+      });
+    },
+    getAlumnosByCategory: function getAlumnosByCategory(curso) {
+      var _this3 = this;
+
+      this.alumnos = [];
+      axios.post("Usuarios/alumnos", {
+        id: curso.id
+      }).then(function (res) {
+        var ramo = res.data[0].fullname;
+        var alumnosArray = [];
+        alumnosArray = res.data.filter(function (alumno) {
+          return alumno.fullname === ramo;
+        }); // res.data.map(x =>  !alumnos.includes(x)
+        // ? alumnos.push(x)
+        // : null
+
+        _this3.alumnos = alumnosArray;
+        $('#modal2').modal('toggle');
       });
     }
   },
@@ -265,7 +330,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [
                       _c(
-                        "a",
+                        "button",
                         {
                           staticClass: "btn btn-info btn-xs",
                           attrs: {
@@ -281,6 +346,23 @@ var render = function() {
                         [
                           _vm._v(
                             "\n                      Ver Asignatura Asociadas\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-success btn-xs",
+                          on: {
+                            click: function($event) {
+                              return _vm.getAlumnosByCategory(curso)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                    Ver alumnos\n                    "
                           )
                         ]
                       )
@@ -368,6 +450,80 @@ var render = function() {
                                 : _vm._e(),
                               _vm._v(" "),
                               _vm._m(3, true)
+                            ])
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "modal fade",
+                        attrs: {
+                          id: "modal2",
+                          tabindex: "-1",
+                          role: "dialog",
+                          "aria-labelledby": "exampleModalCenterTitle",
+                          "aria-hidden": "true"
+                        }
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "modal-dialog modal-xl modal-dialog-centered",
+                            attrs: { role: "document" }
+                          },
+                          [
+                            _c("div", { staticClass: "modal-content " }, [
+                              _vm._m(4, true),
+                              _vm._v(" "),
+                              _c("table", { staticClass: "table" }, [
+                                _vm._m(5, true),
+                                _vm._v(" "),
+                                _c(
+                                  "tbody",
+                                  _vm._l(_vm.alumnos, function(c) {
+                                    return _c("tr", { key: c.id }, [
+                                      _c("td", [_vm._v(_vm._s(c.firstname))]),
+                                      _vm._v(" "),
+                                      _c("td", [_vm._v(_vm._s(c.lastname))]),
+                                      _vm._v(" "),
+                                      _c("td", [_vm._v(_vm._s(c.username))]),
+                                      _vm._v(" "),
+                                      _c("td", [_vm._v(_vm._s(c.email))]),
+                                      _vm._v(" "),
+                                      _c("td", [
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass: "btn btn-danger",
+                                            attrs: {
+                                              "data-target": "#informe",
+                                              "data-toggle": "modal"
+                                            },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.cargartodo(c)
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "Obtener certificado de alumno regular"
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                    ])
+                                  }),
+                                  0
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _vm._m(6, true)
                             ])
                           ]
                         )
@@ -535,7 +691,11 @@ var render = function() {
                               _c("div", { staticClass: "col-10" }, [
                                 _c("h3", [
                                   _c("strong", [
-                                    _vm._v("ALONSO MATÍAS GUTIERREZ HENRIQUEZ")
+                                    _vm._v(
+                                      _vm._s(_vm.todo.firstname) +
+                                        " " +
+                                        _vm._s(_vm.todo.lastname)
+                                    )
                                   ])
                                 ])
                               ]),
@@ -553,11 +713,13 @@ var render = function() {
                               _c("div", { staticClass: "col-10" }, [
                                 _c("h3", [
                                   _vm._v("RUT: "),
-                                  _c("strong", [_vm._v("22.135.455-9 ")]),
+                                  _c("strong", [
+                                    _vm._v(_vm._s(_vm.todo.username) + " ")
+                                  ]),
                                   _vm._v(", es alumno(a) regular del "),
-                                  _c("strong", [_vm._v("8B")]),
+                                  _c("strong", [_vm._v(_vm._s(_vm.todo.name))]),
                                   _vm._v(" de "),
-                                  _c("strong", [_vm._v("Enseñanza Básica")]),
+                                  _c("strong", [_vm._v("Enseñanza Media")]),
                                   _vm._v(
                                     "\n                                            ,inscrito(a) en el Registro N° "
                                   ),
@@ -709,6 +871,64 @@ var staticRenderFns = [
         _c("th", [_vm._v("Visible")]),
         _vm._v(" "),
         _c("th", [_vm._v("Mostrar Calificaciones")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Aciones")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Cerrar")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        { staticClass: "modal-title", attrs: { id: "exampleModalLongTitle" } },
+        [_vm._v(" Alumnos ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Nombre")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Apellidos")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Rut")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Correo electronico")]),
         _vm._v(" "),
         _c("th", [_vm._v("Aciones")])
       ])
