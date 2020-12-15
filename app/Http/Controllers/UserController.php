@@ -19,16 +19,16 @@ class UserController extends Controller
         return $alumnos;
     }
 
-   public function getAlumnosByCategory(){
+   public function getAlumnosByCategory(Request $request){
 
     $alumnos = DB::table("mdluu_course_categories as cat")
                     ->select("cat.id","cat.name","cou.fullname","cou.id as courseid","coc.userid","us.*")
-                    ->where("cat.id","19")
+                    ->where("cat.id",$request->id)
                     ->join("mdluu_course as cou","cou.category","=","cat.id")
                     ->join("mdluu_course_completions as coc","coc.course","=","cou.id")
                     ->join("mdluu_user as us","us.id","=","coc.userid")
+                    ->distinct()
                     ->get();
-
                     return $alumnos;
     //21
    }
