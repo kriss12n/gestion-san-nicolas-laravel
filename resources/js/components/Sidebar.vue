@@ -22,9 +22,9 @@
                                 </router-link>
                             </li>
                              <li>
-                                <router-link to="/usuarios" class="nav-link waves-effect">
+                                <router-link to="/alumnos" class="nav-link waves-effect">
                                     <i class="bx bx-user-circle"></i>
-                                    <span key="t-starter-page">Usuarios</span>
+                                    <span key="t-starter-page">Alumnos</span>
                                 </router-link>
                                 <router-link to="/asig" class="nav-link waves-effect" >
                                     <i class="bx bx-clinic"></i>
@@ -32,21 +32,6 @@
                                 </router-link>
                             </li>
 
-                            <li class="menu-title" key="t-pages">Certificados</li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-user-circle"></i>
-                                    <span key="t-authentication">Certicados</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                        <li>
-                                            <router-link to="/alumno-regular-certificado" class="nav-link waves-effect">
-                                                <span key="t-starter-page">Alumno regular</span>
-                                             </router-link>
-                                        </li>
-                                </ul>
-                            </li>
                                  <li class="menu-title" key="t-pages">Exportaciones SIGE</li>
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">

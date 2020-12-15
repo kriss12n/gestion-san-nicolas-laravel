@@ -160,8 +160,8 @@
 
 							 	  <div class="col-12">
                                         <div class="row justify-content-center">
-                                          <div class="col-2"></div>
-                                          <div class="col-9"> <h4>La Dirección del Liceo politecnico San Nicolás de Chillán, certifica que el Sr.(ta):</h4></div>
+                                          <div class="col-1"></div>
+                                          <div class="col-10"> <h4>La Dirección del Liceo politecnico San Nicolás de Chillán, certifica que el Sr.(ta):</h4></div>
                                           <div class="col-1"></div>
                                         </div>
                                    <div class="row justify-content-center mt-3">
@@ -171,8 +171,8 @@
                                         </div>
                                    <div class="row justify-content-center mt-3">
                                           <div class="col-1"></div>
-                                          <div class="col-10">   <h3>RUT: <strong>{{todo.username}} </strong>, es alumno(a) regular del <strong>{{todo.name}}</strong> de <strong>Enseñanza Media</strong>
-                                            ,inscrito(a) en el Registro N° <strong>826</strong> de nuestro establecimiento.</h3></div>
+                                          <div class="col-10">   <h3>RUT: <strong>{{todo.username}} </strong>, es alumno(a) regular del <strong>{{todo.name}}</strong> de <strong>{{ todo.path && todo.path.includes("/18") ? "Enseñanza Media, " : "Enseñanza Basica, "}}</strong>
+                                            inscrito(a) en el Registro N° <strong>{{todo.userid}}</strong> de nuestro establecimiento.</h3></div>
                                           <div class="col-1"></div>
                                         </div>
 
@@ -182,7 +182,18 @@
                                              </h4></div>
                                           <div class="col-1"></div>
                                         </div>
-
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
 									<br>
 									<br>
 									<br>
@@ -197,9 +208,7 @@
 									<br>
 									<div class="d-flex row justify-content-around">
 										<div class="col-4">
-											<hr class="w-100 color-black">
-											<p class="text-center">Nombre profesor</p>
-											<p class="text-center">PROFESOR JEFE</p>
+
 										</div>
 										<div class="col-4">
 											<hr class="w-100 color-black">
@@ -214,15 +223,31 @@
 					</di>
 
 				</div>
-				<Button>imprimir</Button>
+				<Button class="btn btn-info" @click="print">Imprimir</Button>
 			</div>
 
     </div>
   </div>
 </template>
 <script>
+import Vue from "vue";
+import VueHtmlToPaper from 'vue-html-to-paper';
+const options = {
+  name: '_blank',
+  specs: [
+    'fullscreen=yes',
+    'titlebar=yes',
+    'scrollbars=yes'
+  ],
+  styles: [
+    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
+    'https://unpkg.com/kidlat-css/css/kidlat.css'
+  ]
+}
 
+Vue.use(VueHtmlToPaper, options);
 export default {
+
   data() {
     return {
       cursos: [],
@@ -266,8 +291,6 @@ export default {
             // res.data.map(x =>  !alumnos.includes(x)
             // ? alumnos.push(x)
             // : null
-
-
 
      this.alumnos = alumnosArray;
 

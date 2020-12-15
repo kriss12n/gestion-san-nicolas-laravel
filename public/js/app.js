@@ -2141,21 +2141,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -38896,12 +38881,12 @@ var render = function() {
                   "router-link",
                   {
                     staticClass: "nav-link waves-effect",
-                    attrs: { to: "/usuarios" }
+                    attrs: { to: "/alumnos" }
                   },
                   [
                     _c("i", { staticClass: "bx bx-user-circle" }),
                     _vm._v(" "),
-                    _c("span", { key: "t-starter-page" }, [_vm._v("Usuarios")])
+                    _c("span", { key: "t-starter-page" }, [_vm._v("Alumnos")])
                   ]
                 ),
                 _vm._v(" "),
@@ -38920,55 +38905,6 @@ var render = function() {
               ],
               1
             ),
-            _vm._v(" "),
-            _c("li", { key: "t-pages", staticClass: "menu-title" }, [
-              _vm._v("Certificados")
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c(
-                "a",
-                {
-                  staticClass: "has-arrow waves-effect",
-                  attrs: { href: "javascript: void(0);" }
-                },
-                [
-                  _c("i", { staticClass: "bx bx-user-circle" }),
-                  _vm._v(" "),
-                  _c("span", { key: "t-authentication" }, [
-                    _vm._v("Certicados")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "ul",
-                {
-                  staticClass: "sub-menu",
-                  attrs: { "aria-expanded": "false" }
-                },
-                [
-                  _c(
-                    "li",
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "nav-link waves-effect",
-                          attrs: { to: "/alumno-regular-certificado" }
-                        },
-                        [
-                          _c("span", { key: "t-starter-page" }, [
-                            _vm._v("Alumno regular")
-                          ])
-                        ]
-                      )
-                    ],
-                    1
-                  )
-                ]
-              )
-            ]),
             _vm._v(" "),
             _c("li", { key: "t-pages", staticClass: "menu-title" }, [
               _vm._v("Exportaciones SIGE")
@@ -57363,6 +57299,12 @@ var routes = [{
   component: function component() {
     return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./pages/AlumnorRegularComponent.vue */ "./resources/js/pages/AlumnorRegularComponent.vue"));
   }
+}, {
+  path: "/alumnos",
+  name: "alumnos",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./pages/UserComponent.vue */ "./resources/js/pages/UserComponent.vue"));
+  }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: routes,
@@ -57390,12 +57332,12 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\gestion-san-nicolas-laravel\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\laragon\www\gestion-san-nicolas-laravel\resources\assets\libs\metismenu\metisMenu.min.js */"./resources/assets/libs/metismenu/metisMenu.min.js");
-__webpack_require__(/*! C:\laragon\www\gestion-san-nicolas-laravel\resources\assets\libs\simplebar\simplebar.min.js */"./resources/assets/libs/simplebar/simplebar.min.js");
-__webpack_require__(/*! C:\laragon\www\gestion-san-nicolas-laravel\resources\assets\libs\node-waves\waves.min.js */"./resources/assets/libs/node-waves/waves.min.js");
-__webpack_require__(/*! C:\laragon\www\gestion-san-nicolas-laravel\resources\assets\js\app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\gestion-san-nicolas-laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Volumes/HDD/proyectos/test/gestion-san-nicolas-laravel/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Volumes/HDD/proyectos/test/gestion-san-nicolas-laravel/resources/assets/libs/metismenu/metisMenu.min.js */"./resources/assets/libs/metismenu/metisMenu.min.js");
+__webpack_require__(/*! /Volumes/HDD/proyectos/test/gestion-san-nicolas-laravel/resources/assets/libs/simplebar/simplebar.min.js */"./resources/assets/libs/simplebar/simplebar.min.js");
+__webpack_require__(/*! /Volumes/HDD/proyectos/test/gestion-san-nicolas-laravel/resources/assets/libs/node-waves/waves.min.js */"./resources/assets/libs/node-waves/waves.min.js");
+__webpack_require__(/*! /Volumes/HDD/proyectos/test/gestion-san-nicolas-laravel/resources/assets/js/app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! /Volumes/HDD/proyectos/test/gestion-san-nicolas-laravel/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -29,8 +29,9 @@ Route::post('/Administracion/studentnotas/{id}/edit',[CursoController::class,"ed
 Route::post('/Administracion/studentnotast/{id}/edit',[CursoController::class,"editnt"]);
 
 Route::get('/file-download',[CursoController::class,"downloadFile"]);
+Route::get('/Usuarios',[UserController::class,"index"]);
 Route::post('/Usuarios/alumnos',[UserController::class,"getAlumnosByCategory"]);
 
-
+Route::get('/Usuarios/notas',[UserController::class,"getNotasByAlumno"]);
 Route::get('Administracion/cursocategoria',[CursoCategoriaController::class,'index']);
 Route::post('Administracion/cursocategoria/{id}/edit',[CursoCategoriaController::class,'edit']);

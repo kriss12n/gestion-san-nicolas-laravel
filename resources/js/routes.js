@@ -38,6 +38,11 @@ const routes= [
         path: "/alumno-regular-certificado",
         name: "alumno_regular",
         component: () => import("./pages/AlumnorRegularComponent.vue")
+    },
+    {
+        path: "/alumnos",
+        name: "alumnos",
+        component: () => import("./pages/UserComponent.vue")
     }
 ];
 

@@ -13,7 +13,7 @@ class UserController extends Controller
         $alumnos = DB::table('mdluu_role_assignments')
                 ->where("roleid","=",5)
                 ->join("mdluu_user","mdluu_user.id","=","mdluu_role_assignments.userid")
-                ->groupBy(["mdluu_user.id","mdluu_role_assignments.id","gestion.mdluu_course_completions.id"])
+                ->distinct()
                 ->get();
 
         return $alumnos;
@@ -22,7 +22,7 @@ class UserController extends Controller
    public function getAlumnosByCategory(Request $request){
 
     $alumnos = DB::table("mdluu_course_categories as cat")
-                    ->select("cat.id","cat.name","cou.fullname","cou.id as courseid","coc.userid","us.*")
+                    ->select("cat.id","cat.path","cat.name","cou.fullname","cou.id as courseid","coc.userid","us.*")
                     ->where("cat.id",$request->id)
                     ->join("mdluu_course as cou","cou.category","=","cat.id")
                     ->join("mdluu_course_completions as coc","coc.course","=","cou.id")
@@ -31,5 +31,18 @@ class UserController extends Controller
                     ->get();
                     return $alumnos;
     //21
+   }
+
+   public function getNotasByAlumno(){
+       $notas = DB::table('mdluu_grade_grades as grade')
+                ->select("grade.id","user.firstname","user.lastname","item.itemname","grade.rawgrade","grade.finalgrade","course.fullname")
+                ->groupBy("course.id","course.fullname")
+                ->where("grade.userid","2")
+                ->join("mdluu_user as user","user.id","=","grade.userid")
+                ->join("mdluu_grade_items as item","item.id","=","grade.itemid")
+                ->join("mdluu_course as course","course.id","=","item.courseid")
+                ->get();
+
+                return $notas;
    }
 }
