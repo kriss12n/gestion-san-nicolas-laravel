@@ -15,7 +15,7 @@
                 <tbody>
                     <tr>
                     <td>1</td>
-                    <td>1º B</td>
+                    <td>3º B</td>
                     <td> <button @click="downloadFile" class="btn btn-primary" >obtener SIGE</button> </td>
                     </tr>
                 </tbody>
