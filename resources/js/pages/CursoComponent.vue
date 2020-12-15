@@ -76,9 +76,111 @@
         </div>
       </div>
     </div>
+    <button @click="print" data-target="#informe" data-toggle="modal" class="btn btn-success mt-2">Generar reporte de notas</button>
+    <div>
+
+				<div class="modal fade"  data-backdrop="static" id="informe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-xl" id="printableTable">
+					<di class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Certificado "alumno"</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="container" id="printMe">
+							<div class="row">
+								<div class="col-12">
+									<div class="media">
+										<img src="https://www.liceosannicolas.cl/wp-content/uploads/2018/10/LogoLiceo2kX2k-300x300.png" style="width:10%"   class="align-self-center mr-4" alt="logo liceo">
+										<div class="media-body">
+											<h5 class="mt-0 color-black">Liceo politecnico San Nicolás</h5>
+											<p class="mb-0">RBD: 4140 - 8 </p>
+											<p class="mb-0">Balmaceda 462 - San Nicolás </p>
+											<p class="mb-0">Fono: 42-2561512 </p>
+										</div>
+									</div>
+                                    <br>
+									<br>
+									<br>
+									<br>
+									<h2 class="text-center"><strong><u>C E R T I F I C A D O</u> </strong> </h2>
+                                    <br>
+									<br>
+									<br>
+									<br>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+
+								</div>
+
+							 	  <div class="col-12">
+                                        <div class="row justify-content-center">
+                                          <div class="col-2"></div>
+                                          <div class="col-9"> <h4>La Dirección del Liceo politecnico San Nicolás de Chillán, certifica que el Sr.(ta):</h4></div>
+                                          <div class="col-1"></div>
+                                        </div>
+                                   <div class="row justify-content-center mt-3">
+                                          <div class="col-1"></div>
+                                          <div class="col-10">   <h3><strong>ALONSO MATÍAS GUTIERREZ HENRIQUEZ</strong></h3></div>
+                                          <div class="col-1"></div>
+                                        </div>
+                                   <div class="row justify-content-center mt-3">
+                                          <div class="col-1"></div>
+                                          <div class="col-10">   <h3>RUT: <strong>22.135.455-9 </strong>, es alumno(a) regular del <strong>8B</strong> de <strong>Enseñanza Básica</strong>
+                                            ,inscrito(a) en el Registro N° <strong>826</strong> de nuestro establecimiento.</h3></div>
+                                          <div class="col-1"></div>
+                                        </div>
+
+                                          <div class="row justify-content-center mt-3">
+                                          <div class="col-1"></div>
+                                          <div class="col-9">   <h4>Se extiende el presente certificado a petición del apoderado para los fines que estime conveniente.
+                                             </h4></div>
+                                          <div class="col-1"></div>
+                                        </div>
+
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<div class="d-flex row justify-content-around">
+										<div class="col-4">
+											<hr class="w-100 color-black">
+											<p class="text-center">Nombre profesor</p>
+											<p class="text-center">PROFESOR JEFE</p>
+										</div>
+										<div class="col-4">
+											<hr class="w-100 color-black">
+											<p  class="text-center"> Nombre director</p>
+											<p class="text-center">DIRECTOR</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					</di>
+
+				</div>
+				<Button>imprimir</Button>
+			</div>
+
+    </div>
   </div>
 </template>
 <script>
+
 export default {
   data() {
     return {
@@ -89,6 +191,10 @@ export default {
     };
   },
   methods: {
+      	print () {
+			this.$htmlToPaper('printMe');
+    },
+
     getCursos() {
       axios.get("Administracion/cursocategoria").then((res) => {
         console.log(res);
@@ -101,7 +207,7 @@ export default {
         axios.post("Administracion/cursocategoria/"+this.idcurso+"/edit").then((res) => {
         this.cursosc = res.data;
       });
-    }
+    },
 
   },
   created() {

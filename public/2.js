@@ -89,6 +89,107 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -99,6 +200,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    print: function print() {
+      this.$htmlToPaper('printMe');
+    },
     getCursos: function getCursos() {
       var _this = this;
 
@@ -176,7 +280,7 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                    Ver Asignatura Asociadas\n                  "
+                            "\n                      Ver Asignatura Asociadas\n                    "
                           )
                         ]
                       )
@@ -277,6 +381,282 @@ var render = function() {
           ])
         ])
       ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-success mt-2",
+        attrs: { "data-target": "#informe", "data-toggle": "modal" },
+        on: { click: _vm.print }
+      },
+      [_vm._v("Generar reporte de notas")]
+    ),
+    _vm._v(" "),
+    _c("div", [
+      _c(
+        "div",
+        {
+          staticClass: "modal fade",
+          attrs: {
+            "data-backdrop": "static",
+            id: "informe",
+            tabindex: "-1",
+            "aria-labelledby": "exampleModalLabel",
+            "aria-hidden": "true"
+          }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass: "modal-dialog modal-xl",
+              attrs: { id: "printableTable" }
+            },
+            [
+              _c("di", { staticClass: "modal-content" }, [
+                _c("div", { staticClass: "modal-header" }, [
+                  _c(
+                    "h5",
+                    {
+                      staticClass: "modal-title",
+                      attrs: { id: "exampleModalLabel" }
+                    },
+                    [_vm._v('Certificado "alumno"')]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "close",
+                      attrs: {
+                        type: "button",
+                        "data-dismiss": "modal",
+                        "aria-label": "Close"
+                      }
+                    },
+                    [
+                      _c("span", { attrs: { "aria-hidden": "true" } }, [
+                        _vm._v("×")
+                      ])
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body" }, [
+                  _c(
+                    "div",
+                    { staticClass: "container", attrs: { id: "printMe" } },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-12" }, [
+                          _c("div", { staticClass: "media" }, [
+                            _c("img", {
+                              staticClass: "align-self-center mr-4",
+                              staticStyle: { width: "10%" },
+                              attrs: {
+                                src:
+                                  "https://www.liceosannicolas.cl/wp-content/uploads/2018/10/LogoLiceo2kX2k-300x300.png",
+                                alt: "logo liceo"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "media-body" }, [
+                              _c("h5", { staticClass: "mt-0 color-black" }, [
+                                _vm._v("Liceo politecnico San Nicolás")
+                              ]),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "mb-0" }, [
+                                _vm._v("RBD: 4140 - 8 ")
+                              ]),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "mb-0" }, [
+                                _vm._v("Balmaceda 462 - San Nicolás ")
+                              ]),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "mb-0" }, [
+                                _vm._v("Fono: 42-2561512 ")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("h2", { staticClass: "text-center" }, [
+                            _c("strong", [
+                              _c("u", [_vm._v("C E R T I F I C A D O")])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-12" }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-12" }, [
+                          _c(
+                            "div",
+                            { staticClass: "row justify-content-center" },
+                            [
+                              _c("div", { staticClass: "col-2" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-9" }, [
+                                _c("h4", [
+                                  _vm._v(
+                                    "La Dirección del Liceo politecnico San Nicolás de Chillán, certifica que el Sr.(ta):"
+                                  )
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-1" })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "row justify-content-center mt-3" },
+                            [
+                              _c("div", { staticClass: "col-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-10" }, [
+                                _c("h3", [
+                                  _c("strong", [
+                                    _vm._v("ALONSO MATÍAS GUTIERREZ HENRIQUEZ")
+                                  ])
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-1" })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "row justify-content-center mt-3" },
+                            [
+                              _c("div", { staticClass: "col-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-10" }, [
+                                _c("h3", [
+                                  _vm._v("RUT: "),
+                                  _c("strong", [_vm._v("22.135.455-9 ")]),
+                                  _vm._v(", es alumno(a) regular del "),
+                                  _c("strong", [_vm._v("8B")]),
+                                  _vm._v(" de "),
+                                  _c("strong", [_vm._v("Enseñanza Básica")]),
+                                  _vm._v(
+                                    "\n                                            ,inscrito(a) en el Registro N° "
+                                  ),
+                                  _c("strong", [_vm._v("826")]),
+                                  _vm._v(" de nuestro establecimiento.")
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-1" })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "row justify-content-center mt-3" },
+                            [
+                              _c("div", { staticClass: "col-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-9" }, [
+                                _c("h4", [
+                                  _vm._v(
+                                    "Se extiende el presente certificado a petición del apoderado para los fines que estime conveniente.\n                                             "
+                                  )
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-1" })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass: "d-flex row justify-content-around"
+                            },
+                            [
+                              _c("div", { staticClass: "col-4" }, [
+                                _c("hr", { staticClass: "w-100 color-black" }),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "text-center" }, [
+                                  _vm._v("Nombre profesor")
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "text-center" }, [
+                                  _vm._v("PROFESOR JEFE")
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-4" }, [
+                                _c("hr", { staticClass: "w-100 color-black" }),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "text-center" }, [
+                                  _vm._v(" Nombre director")
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "text-center" }, [
+                                  _vm._v("DIRECTOR")
+                                ])
+                              ])
+                            ]
+                          )
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("Button", [_vm._v("imprimir")])
+        ],
+        1
+      )
     ])
   ])
 }
